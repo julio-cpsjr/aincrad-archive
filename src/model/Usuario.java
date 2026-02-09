@@ -1,6 +1,11 @@
 package model;
 
-
+/**
+ *
+ *
+ * @author julio-cpsjr
+ * @version 1.0
+ */
 public class Usuario {
     private static String nome;
 
@@ -11,10 +16,4 @@ public class Usuario {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-
-
-
-
-
 }
