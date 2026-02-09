@@ -1,8 +1,11 @@
 package model;
 
-import model.Livro;
-
-
+/**
+ * Classe para criação de Emprestimo
+ *
+ * @author julio-cpsjr
+ * @version 1.0
+ */
 public class Emprestimo {
     private String nome_livro;
     private String nome_usuario;
@@ -11,7 +14,7 @@ public class Emprestimo {
     private static int quantidade;
 
     public String getNome_livro() {
-        return Livro.getNome();
+        return Livro.getNome(livro);
     }
 
 

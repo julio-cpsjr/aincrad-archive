@@ -1,6 +1,11 @@
 package model;
 
-
+/**
+ *
+ *
+ * @author julio-cpsjr
+ * @version 1.0
+ */
 public class Usuario {
     private static String nome;
 

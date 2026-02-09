@@ -1,6 +1,11 @@
 package model;
 
-
+/**
+ * Classe para criação de Livro
+ *
+ * @author julio-cpsjr
+ * @version 1.0
+ */
 public class Livro {
     private static String nome;
     private static String descricao;
@@ -36,7 +41,7 @@ public class Livro {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public static void setQuantidade(int quantidade) {
         Livro.quantidade = quantidade;
     }
 
