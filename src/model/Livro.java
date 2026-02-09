@@ -2,34 +2,34 @@ package model;
 
 
 public class Livro {
-    private String nome;
-    private String descricao;
-    private String categoria;
+    private static String nome;
+    private static String descricao;
+    private static String categoria;
     private static int quantidade;
 
 
-    public String getNome() {
+    public static String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        Livro.nome = nome;
     }
 
-    public String getDescricao() {
+    public static String getDescricao() {
         return descricao;
     }
 
     public void setDescricao(String descricao) {
-        this.descricao = descricao;
+        Livro.descricao = descricao;
     }
 
-    public String getCategoria() {
+    public static String getCategoria() {
         return categoria;
     }
 
     public void setCategoria(String categoria) {
-        this.categoria = categoria;
+        Livro.categoria = categoria;
     }
 
     public static int getQuantidade() {
@@ -37,16 +37,16 @@ public class Livro {
     }
 
     public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+        Livro.quantidade = quantidade;
     }
 
     @Override
     public String toString() {
         return "Livro{" +
-                "nome='" + getNome() + '\'' +
-                ", descricao='" + getDescricao() + '\'' +
-                ", categoria='" + getCategoria() + '\'' +
-                ", quantidade=" + getQuantidade() +
+                "Nome='" + getNome() + '\'' +
+                ", Descricao='" + getDescricao() + '\'' +
+                ", Categoria='" + getCategoria() + '\'' +
+                ", Quantidade=" + getQuantidade() +
                 '}';
     }
 }
