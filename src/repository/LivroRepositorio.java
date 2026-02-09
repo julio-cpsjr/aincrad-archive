@@ -19,6 +19,7 @@ public class LivroRepositorio {
         livros.add(livro);
         Livro.setQuantidade(quantidade);
         return this.livros;
+
     }
 
     public List<Livro> listarLivros() {
