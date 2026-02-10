@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class BibliotecaService {
 
 
-        public void cadastrarLivro(Livro livro,String nome, String descricao, String categoria, int quantidade){
+        public static void cadastrarLivro(Livro livro, String nome, String descricao, String categoria, int quantidade){
             livro.setNome(nome);
             livro.setDescricao(descricao);
             livro.setCategoria(categoria);
@@ -28,17 +28,17 @@ public class BibliotecaService {
             System.out.println("Lista de livros cadastrados:");
             System.out.println(LivroRepositorio.listarLivros());
         }
-        public void listarLivros(){
+        public static void listarLivros(){
             System.out.println("Livros cadastrados:");
             System.out.println(LivroRepositorio.listarLivros());
         }
-        public void removerLivro(Livro livro, int quantidade){
+        public static void removerLivro(Livro livro, int quantidade){
             LivroRepositorio.excluirLivros(livro,quantidade);
             System.out.println("Livros disponíveis:");
             System.out.println(LivroRepositorio.listarLivros());
         }
 
-        public void cadastrarUsuario(Usuario usuario,String nome, int cpf,String endereco, String cidade, String estado, String inadimplente){
+        public static void cadastrarUsuario(Usuario usuario, String nome, String endereco, String cidade, String estado, String inadimplente){
             usuario.setNomeUsuario(nome);
             usuario.setEndereco(endereco);
             usuario.setCidade(cidade);
@@ -49,11 +49,11 @@ public class BibliotecaService {
             System.out.println("Usuario cadastrado com sucesso!");
             System.out.println(usuario.exibirUsuario());
         }
-        public void listarUsuarios(){
+        public static void listarUsuarios(){
             System.out.println("Usuarios cadastrados:");
             System.out.println(UsuarioRepositorio.listarUsuarios());
         }
-        public void removerUsuario(int usuarioId){
+        public static void removerUsuario(int usuarioId){
             UsuarioRepositorio.excluirUsuarios(usuarioId);
             System.out.println("Usuario removido com sucesso!");
             System.out.println("Usuarios cadastrados:");

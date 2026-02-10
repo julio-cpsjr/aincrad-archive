@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 
 public class EmprestimoService {
-    public void cadastrarEmprestimo(Emprestimo emprestimo,String nomeDoUsuario, String nomeDoLivro,String descricaoDoLivro,String categoriaDoLivro, int quantidadeDoLivro ) {
+    public static void cadastrarEmprestimo(Emprestimo emprestimo, String nomeDoUsuario, String nomeDoLivro, String descricaoDoLivro, String categoriaDoLivro, int quantidadeDoLivro) {
         emprestimo.setNomeDoUsuario(nomeDoUsuario);
         emprestimo.setNomeDoLivro(nomeDoLivro);
         emprestimo.setDescricaoDoLivro(descricaoDoLivro);
@@ -23,10 +23,10 @@ public class EmprestimoService {
         EmprestimoRepositorio.incluirEmprestimos(emprestimo.setEmprestimo(novoEmprestimo));
         System.out.println("Emprestimo cadastrado com sucesso!");
     }
-    public void excluirEmprestimo(int emprestimo) {
+    public static void excluirEmprestimo(int emprestimo) {
         EmprestimoRepositorio.excluirEmprestimo(emprestimo);
     }
-    public void verEmprestimos() {
+    public static void verEmprestimos() {
         EmprestimoRepositorio.listarEmprestimos();
     }
 
