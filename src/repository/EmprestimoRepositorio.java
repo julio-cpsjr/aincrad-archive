@@ -1,33 +1,31 @@
 package repository;
 
-import model.Emprestimo;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe para listar,excluir e incluir emprestimos
+ * Repositorio de emprestimos
  *
  * @author julio-cpsjr
  * @version 1.0
  */
 public class EmprestimoRepositorio {
-    private List<Emprestimo> emprestimos = new ArrayList<>();
 
-    public List<Emprestimo> listarEmprestimos() {
+    private static List<List<String>> emprestimos = new ArrayList<>();
 
-        return this.emprestimos;
+    public static List<List<String>> listarEmprestimos() {
+        return emprestimos;
     }
 
-    public List<Emprestimo> incluirEmprestimo(Emprestimo emprestimo) {
+    public static void incluirEmprestimos(List<String> emprestimo) {
         emprestimos.add(emprestimo);
-        return this.emprestimos;
     }
 
-    public List<Emprestimo> excluirEmprestimo(int emprestimo) {
-        this.emprestimos.remove(emprestimo);
-        return this.emprestimos;
-
+    public static void excluirEmprestimo(int emprestimoId) {
+        if(emprestimos.toArray().length > 0){
+            emprestimos.remove(emprestimoId);
+            System.out.println("Emprestimo removido com sucesso");
+        }else{ System.out.println("Nenhum emprestimo encontrado");}
     }
 
 
