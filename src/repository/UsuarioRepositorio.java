@@ -1,24 +1,28 @@
 package repository;
 
-import model.Usuario;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe para Listar Usuários
+ * Repositiorio de Usuarios
  *
  * @author julio-cpsjr
  * @version 1.0
  */
 public class UsuarioRepositorio {
 
-    private List<Usuario> usuario =  new ArrayList<>();
+    private static List<List<String>> usuarios =  new ArrayList<>();
 
-    public List<Usuario> getUsuario() {
-        return usuario;
+    public static List<List<String>> listarUsuarios() {
+        return  usuarios;
     }
-    public void setUsuario(List<Usuario> usuario) {
-        this.usuario = usuario;
+    public static void incluirUsuarios(List<String> usuario) {
+        usuarios.add(usuario);
+    }
+
+    public static void excluirUsuarios(int usuario) {
+        if(usuarios.toArray().length > 0){
+            usuarios.remove(usuario);
+        }else{ System.out.println("Nenhum usuario encontrado");}
     }
 }
