@@ -1,6 +1,9 @@
 # Sistema de Biblioteca em Java (Console)
 
-Sistema de gerenciamento de biblioteca desenvolvido em Java com foco em Programação Orientada a Objetos e implementação de regras de negócio em ambiente console.
+
+<img src="/img/Cardinal.png">
+
+A Cardinal precisa de ajuda com a Biblioteca, que foi desenvolvido em Java com foco em Programação Orientada a Objetos e implementação de regras de negócio em ambiente console.
 
 Este projeto tem como objetivo consolidar fundamentos essenciais para o desenvolvimento backend, servindo como base para evoluções futuras (API REST e aplicações cloud).
 
