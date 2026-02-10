@@ -6,32 +6,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe para listar,incluir e excluir livros
+ * Repositorio de Livros
  *
  * @author julio-cpsjr
  * @version 1.0
  */
 public class LivroRepositorio {
 
-    private List<Livro> livros = new ArrayList<>();
+    static List<List<String>> livros = new ArrayList<>();
 
-    public List<Livro> incluirLivros(Livro livro, int quantidade) {
+    public static List<List<String>> listarLivros() {
+        return  livros;
+    }
+
+    public static void incluirLivros(List<String> livro) {
         livros.add(livro);
-        Livro.setQuantidade(quantidade);
-        return this.livros;
-
     }
 
-    public List<Livro> listarLivros() {
-        return  this.livros;
-    }
-
-    public List<Livro> excluirLivros(int livro, int quantidade) {
-        this.livros.remove(livro);
+    public static void excluirLivros(Livro livro,int quantidade) {
+        int indexLivro = livros.indexOf(livro);
         int removeLivro = Livro.getQuantidade();
         if(removeLivro > 0){
-            Livro.setQuantidade(removeLivro-quantidade);
-        }else{ System.out.println("Quantidade insuficiente");}
-        return this.livros;
+            if (removeLivro-quantidade > 0){
+            livros.remove(indexLivro);
+            livro.setQuantidade(removeLivro-quantidade);
+            System.out.println("Livros removido com sucesso!");
+            }
+        }else{ System.out.println("Livro indisponível");}
     }
 }

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 /**
  * Classe para criação de Livro
  *
@@ -18,7 +20,7 @@ public class Livro {
     }
 
     public void setNome(String nome) {
-        Livro.nome = nome;
+        this.nome = nome;
     }
 
     public static String getDescricao() {
@@ -26,7 +28,7 @@ public class Livro {
     }
 
     public void setDescricao(String descricao) {
-        Livro.descricao = descricao;
+        this.descricao = descricao;
     }
 
     public static String getCategoria() {
@@ -34,19 +36,26 @@ public class Livro {
     }
 
     public void setCategoria(String categoria) {
-        Livro.categoria = categoria;
+        this.categoria = categoria;
     }
 
     public static int getQuantidade() {
         return quantidade;
     }
 
-    public static void setQuantidade(int quantidade) {
-        Livro.quantidade = quantidade;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
-    @Override
-    public String toString() {
+    public ArrayList<String> setLivro(ArrayList<String> livro){
+        livro.add("Livro: " + this.nome );
+        livro.add("Descricao: " + this.descricao );
+        livro.add("Categoria: " + this.categoria );
+        livro.add("Quantidade: " + this.quantidade );
+        return livro;
+    }
+
+    public String exibirLivro() {
         return "Livro{" +
                 "Nome='" + getNome() + '\'' +
                 ", Descricao='" + getDescricao() + '\'' +
