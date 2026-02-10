@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 /**
  * Classe para criação de Emprestimo
  *
@@ -7,60 +9,75 @@ package model;
  * @version 1.0
  */
 public class Emprestimo {
-    private String nome_livro;
-    private String nome_usuario;
-    private String descricao;
-    private String categoria;
-    private static int quantidade;
+    private String nomeDoUsuario;
+    private String nomeDoLivro;
+    private String descricaoDoLivro;
+    private String categoriaDoLivro;
+    private static int quantidadeDoLivro;
 
-    public String getNome_livro() {
-        return Livro.getNome(livro);
+    public String getNomeLivro() {
+        return nomeDoLivro;
     }
 
-
-    public void setNome_livro(String nome_livro) {
-        this.nome_livro = nome_livro;
+    public void setNomeDoLivro(String nomeLivro) {
+        this.nomeDoLivro = nomeLivro;
     }
 
-    public String getNome_usuario() {
-        return Usuario.getNome();
+    public String getNomeDoUsuario() {
+        return nomeDoUsuario;
     }
 
-    public void setNome_usuario(String nome_usuario) {
-        this.nome_usuario = nome_usuario;
+    public void setNomeDoUsuario(String nome) {
+        this.nomeDoUsuario = nome;
     }
 
-    public String getDescricao() {
-        return Livro.getDescricao();
+    public String getDescricaoDoLivro() {
+        return descricaoDoLivro;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescricaoDoLivro(String descricao) {
+        this.descricaoDoLivro = descricao;
     }
 
-    public String getCategoria() {
-        return Livro.getCategoria();
+    public String getCategoriaDoLivro() {
+        return categoriaDoLivro;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setCategoriaDoLivro(String categoria) {
+        this.categoriaDoLivro = categoria;
     }
 
-    public static int getQuantidade() {
-        return Livro.getQuantidade();
+    public static int getQuantidadeDoLivro() {
+        return quantidadeDoLivro;
     }
 
-    public static void setQuantidade(int quantidade) {
-        Emprestimo.quantidade = quantidade;
+    public void setQuantidadeDoLivro(int quantidade) { this.quantidadeDoLivro = quantidade;
     }
 
-    @Override
-    public String toString() {
+    public ArrayList<String> setEmprestimo(ArrayList<String> emprestimo){
+        emprestimo.add("Usuario: " + this.nomeDoUsuario );
+        emprestimo.add("Livro: " + this.nomeDoLivro );
+        emprestimo.add("Descricao: " + this.descricaoDoLivro );
+        emprestimo.add("Categoria: " + this.categoriaDoLivro );
+        emprestimo.add("Quantidade: " + this.quantidadeDoLivro );
+        return emprestimo;
+    }
+
+    public String exibirEmprestimo() {
         return "Emprestimo{" +
-                "Usuario ='" + getNome_usuario() + '\'' +
-                "Livro ='" + getNome_livro() + '\'' +
-                ", Descrição='" + getDescricao() + '\'' +
-                ", Categoria ='" + getCategoria() + '\'' +
+                "Usuario ='" + getNomeDoUsuario() + '\'' +
+                "Livro ='" + getNomeLivro() + '\'' +
+                ", Descrição='" + getDescricaoDoLivro() + '\'' +
+                ", Categoria ='" + getCategoriaDoLivro() + '\'' +
+                ", Categoria ='" + getQuantidadeDoLivro() + '\'' +
                 '}';
     }
+    /*
+    protected void imprimirInfosComuns(){
+        System.out.printf("Titular: %s \n", this.cliente.getNome());
+        System.out.printf("Agência: %d \n", this.agencia);
+        System.out.printf("br.com.dio.dominio.Conta: %d \n", this.numero);
+        System.out.printf("Saldo: %.2f \n", this.saldo);
+    }
+     */
 }
